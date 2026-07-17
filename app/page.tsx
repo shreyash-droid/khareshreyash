@@ -33,9 +33,20 @@ export default function Home() {
           <span className="logo">
             SK<span>.</span>
           </span>
-          <a className="head-mail" href="mailto:shreyashkhare.work@gmail.com">
-            shreyashkhare.work@gmail.com
-          </a>
+          <div className="head-right">
+            <a className="head-mail" href="mailto:shreyashkhare.work@gmail.com">
+              shreyashkhare.work@gmail.com
+            </a>
+            <a
+              className="resume-btn"
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View my resume
+              <span className="resume-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
         </header>
 
         <div className="hero-body wrap">
@@ -65,7 +76,12 @@ export default function Home() {
                 <span className="dot"></span>
                 <span>Open to work</span>
               </div>
-              <a className="btn" href="mailto:shreyashkhare.work@gmail.com">
+              <a
+                className="btn"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=shreyashkhare.work@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Get in touch
               </a>
             </div>
@@ -75,6 +91,34 @@ export default function Home() {
 
       {/* ===== Stats ===== */}
       <section className="section stats-section">
+        {/* Orbit decoration — sits behind the stats */}
+        <div className="orbit-wrap" aria-hidden="true">
+          <svg className="orbit-svg" width="620" height="620" viewBox="0 0 620 620">
+            <circle cx="310" cy="310" r="90" fill="none" stroke="var(--color-border-strong)" strokeWidth="1" />
+            <circle cx="310" cy="310" r="160" fill="none" stroke="var(--color-border-strong)" strokeWidth="1" />
+            <circle cx="310" cy="310" r="230" fill="none" stroke="var(--color-border)" strokeWidth="1" />
+            <circle cx="310" cy="310" r="300" fill="none" stroke="var(--color-border)" strokeWidth="1" />
+            <g className="orbit-spin">
+              <circle cx="400" cy="310" r="3.5" fill="var(--color-fg-tertiary)" />
+              <circle cx="310" cy="400" r="3.5" fill="var(--color-fg-tertiary)" />
+              <circle cx="220" cy="310" r="3.5" fill="var(--color-fg-tertiary)" />
+              <circle cx="310" cy="220" r="3.5" fill="var(--color-fg-tertiary)" />
+              <circle cx="423.1" cy="423.1" r="4" fill="var(--color-fg-tertiary)" />
+              <circle cx="196.9" cy="423.1" r="4" fill="var(--color-fg-tertiary)" />
+              <circle cx="196.9" cy="196.9" r="4" fill="var(--color-fg-tertiary)" />
+              <circle cx="423.1" cy="196.9" r="4" fill="var(--color-fg-tertiary)" />
+              <circle cx="540" cy="310" r="4.5" fill="var(--color-fg-tertiary)" />
+              <circle cx="310" cy="540" r="4.5" fill="var(--color-accent)" />
+              <circle cx="80" cy="310" r="4.5" fill="var(--color-fg-tertiary)" />
+              <circle cx="310" cy="80" r="4.5" fill="var(--color-fg-tertiary)" />
+              <circle cx="522.1" cy="522.1" r="5" fill="var(--color-fg-tertiary)" />
+              <circle cx="97.9" cy="522.1" r="5" fill="var(--color-accent)" />
+              <circle cx="97.9" cy="97.9" r="5" fill="var(--color-fg-tertiary)" />
+              <circle cx="522.1" cy="97.9" r="5" fill="var(--color-fg-tertiary)" />
+            </g>
+          </svg>
+        </div>
+
         <div className="wrap">
           <div className="stats-strip">
             <div className="stat">
@@ -96,34 +140,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Orbit decoration */}
-      <div className="orbit-wrap" aria-hidden="true">
-        <svg className="orbit-svg" width="620" height="620" viewBox="0 0 620 620">
-          <circle cx="310" cy="310" r="90" fill="none" stroke="var(--color-border-strong)" strokeWidth="1" />
-          <circle cx="310" cy="310" r="160" fill="none" stroke="var(--color-border-strong)" strokeWidth="1" />
-          <circle cx="310" cy="310" r="230" fill="none" stroke="var(--color-border)" strokeWidth="1" />
-          <circle cx="310" cy="310" r="300" fill="none" stroke="var(--color-border)" strokeWidth="1" />
-          <g className="orbit-spin">
-            <circle cx="400" cy="310" r="3.5" fill="var(--color-fg-tertiary)" />
-            <circle cx="310" cy="400" r="3.5" fill="var(--color-fg-tertiary)" />
-            <circle cx="220" cy="310" r="3.5" fill="var(--color-fg-tertiary)" />
-            <circle cx="310" cy="220" r="3.5" fill="var(--color-fg-tertiary)" />
-            <circle cx="423.1" cy="423.1" r="4" fill="var(--color-fg-tertiary)" />
-            <circle cx="196.9" cy="423.1" r="4" fill="var(--color-fg-tertiary)" />
-            <circle cx="196.9" cy="196.9" r="4" fill="var(--color-fg-tertiary)" />
-            <circle cx="423.1" cy="196.9" r="4" fill="var(--color-fg-tertiary)" />
-            <circle cx="540" cy="310" r="4.5" fill="var(--color-fg-tertiary)" />
-            <circle cx="310" cy="540" r="4.5" fill="var(--color-accent)" />
-            <circle cx="80" cy="310" r="4.5" fill="var(--color-fg-tertiary)" />
-            <circle cx="310" cy="80" r="4.5" fill="var(--color-fg-tertiary)" />
-            <circle cx="522.1" cy="522.1" r="5" fill="var(--color-fg-tertiary)" />
-            <circle cx="97.9" cy="522.1" r="5" fill="var(--color-accent)" />
-            <circle cx="97.9" cy="97.9" r="5" fill="var(--color-fg-tertiary)" />
-            <circle cx="522.1" cy="97.9" r="5" fill="var(--color-fg-tertiary)" />
-          </g>
-        </svg>
-      </div>
 
       {/* ===== Projects ===== */}
       <section className="section section-pad">
@@ -202,6 +218,29 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ===== Footer ===== */}
+      <footer className="site-footer">
+        <div className="wrap footer-inner">
+          <nav className="footer-links">
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+            <a href="https://www.behance.net/" target="_blank" rel="noopener noreferrer">
+              Behance
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+              Instagram
+            </a>
+          </nav>
+          <p className="footer-note">
+            Made with <span className="footer-heart">&hearts;</span> by Shreyash Khare
+          </p>
+        </div>
+      </footer>
     </>
   );
 }
