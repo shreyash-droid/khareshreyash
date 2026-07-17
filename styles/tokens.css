@@ -1,0 +1,89 @@
+/* Design tokens — imported from "Shreyash Khare Design System"
+   (Claude Design project 30bfab12). Do not hand-edit values individually;
+   these mirror the source token files. */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  /* Fonts */
+  --font-display: 'Space Grotesk', -apple-system, sans-serif;
+  --font-body: 'Space Grotesk', -apple-system, sans-serif;
+  --font-mono: 'Space Mono', ui-monospace, monospace;
+
+  /* Colors */
+  --color-bg: #F5F2EA;
+  --color-bg-raised: #EDE8DC;
+  --color-surface-card: #FBF9F4;
+  --color-fg: #15140F;
+  --color-fg-secondary: #514D42;
+  --color-fg-tertiary: #8C8676;
+  --color-border: #DFD9C9;
+  --color-border-strong: #C9C2AC;
+  --color-accent: #FF4300;
+  --color-accent-hover: #E23B00;
+  --color-accent-press: #C93400;
+  --color-accent-tint: #FFE4D6;
+  --color-accent-fg: #FBF9F4;
+  --color-negative: #A8351F;
+  --color-negative-tint: #F4E1DA;
+  --color-positive: var(--color-accent);
+  --color-focus-ring: #15140F;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+  --container-max: 1160px;
+  --gutter: 24px;
+
+  /* Typography */
+  --text-display-1: clamp(2.75rem, 7vw, 6rem);
+  --text-display-2: clamp(2rem, 4.5vw, 3.25rem);
+  --text-heading: clamp(1.375rem, 2.6vw, 1.875rem);
+  --text-body-lg: 1.25rem;
+  --text-body: 1.0625rem;
+  --text-meta: 0.9375rem;
+  --text-micro: 0.75rem;
+  --leading-tight: 1.02;
+  --leading-snug: 1.15;
+  --leading-normal: 1.5;
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0em;
+  --tracking-micro: 0.12em;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+
+  /* Radius */
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-xl: 36px;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-card: 0 1px 2px rgba(21,20,15,.05), 0 8px 20px rgba(21,20,15,.06), 0 28px 56px rgba(21,20,15,.06);
+  --shadow-card-hover: 0 2px 4px rgba(21,20,15,.06), 0 14px 28px rgba(21,20,15,.08), 0 36px 72px rgba(21,20,15,.08);
+  --shadow-raised: 0 1px 1px rgba(21,20,15,.04), 0 4px 10px rgba(21,20,15,.05);
+  --shadow-popover: 0 4px 8px rgba(21,20,15,.08), 0 20px 40px rgba(21,20,15,.14);
+}
+
+/* Base reset (from design-system base.css) */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--color-fg); text-decoration-color: var(--color-border-strong); }
+a:hover { color: var(--color-accent); text-decoration-color: var(--color-accent); }
+::selection { background: var(--color-accent); color: var(--color-accent-fg); }
