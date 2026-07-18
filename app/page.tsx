@@ -218,14 +218,23 @@ export default function Home() {
 
           <div className="personal-grid">
             {/* Map tile */}
-            <div className="map-tile">
-              <div className="slot placeholder">Map screenshot</div>
+            <a
+              className="map-tile"
+              href="https://www.google.com/maps/search/?api=1&query=13.0827,80.2707"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open Chennai in Google Maps"
+            >
+              <div className="slot">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img className="map-img" src="/img/map.webp" alt="Map of Chennai" />
+              </div>
               <span className="map-tag">Map</span>
               <div className="map-caption">
                 <div className="city">Chennai</div>
                 <div className="coord">13.0827&deg; N, 80.2707&deg; E</div>
               </div>
-            </div>
+            </a>
 
             {/* Middle column */}
             <div className="mid-col">

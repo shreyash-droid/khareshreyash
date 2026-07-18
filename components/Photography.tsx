@@ -7,6 +7,9 @@ const GALLERY = [
   "/img/hobby-1.webp",
   "/img/hobby-2.webp",
   "/img/hobby-3.webp",
+  "/img/hobby-4.webp",
+  "/img/hobby-5.webp",
+  "/img/hobby-6.webp",
 ];
 const mod = (n: number, m: number) => ((n % m) + m) % m;
 
