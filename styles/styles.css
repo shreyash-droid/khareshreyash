@@ -413,13 +413,25 @@ button { border-radius: 0; }
   color: var(--color-fg-tertiary);
 }
 .proj-arrow {
-  font-size: 20px;
-  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
   flex: none;
-  color: var(--color-fg);
-  transition: color .2s ease;
+  border-radius: 999px;
+  font-size: 18px;
+  line-height: 1;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
 }
-.project-card:hover .proj-arrow { color: var(--color-accent); }
+.proj-arrow:hover {
+  background: var(--color-accent);
+  color: var(--color-accent-fg);
+  transform: translate(2px, -2px);
+}
 .proj-desc {
   max-height: 0;
   opacity: 0;
@@ -800,13 +812,43 @@ button { border-radius: 0; }
 .footer-heart { color: var(--color-accent); }
 
 /* ---- Responsive ---- */
+@media (max-width: 960px) {
+  .section-pad { padding: var(--space-8) var(--gutter); }
+  .stats-section { padding: var(--space-8) var(--gutter); }
+}
+
 @media (max-width: 860px) {
   .personal-grid { grid-template-columns: 1fr; }
 }
+
+@media (max-width: 720px) {
+  /* Navbar: let the email + resume button wrap under the logo */
+  .site-head { flex-wrap: wrap; row-gap: var(--space-3); }
+  .head-right { flex-wrap: wrap; gap: var(--space-3); }
+  .head-mail { font-size: var(--text-micro); }
+
+  /* Footer stacks */
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+}
+
 @media (max-width: 560px) {
   .name-hey { display: none; }
   .section-head { align-items: flex-start; }
+  .section-pad { padding: var(--space-7) var(--gutter); }
+  .stats-section { padding: var(--space-7) var(--gutter); }
+  .cta-row { width: 100%; }
+
+  /* Gallery: drop the blurred side previews on small screens */
+  .gallery-frames .side { display: none; }
+  .gallery-frames .center { width: 88%; }
+  .gallery-stage { gap: var(--space-2); padding: var(--space-5) var(--space-3); }
 }
+
+/* Touch devices can't hover — reveal project descriptions by default */
+@media (hover: none) {
+  .proj-desc { max-height: none; opacity: 1; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .roll-track { animation: none; }
   .orbit-spin { animation: none; }

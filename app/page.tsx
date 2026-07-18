@@ -3,21 +3,36 @@ import TiltCard from "../components/TiltCard";
 import WorkStepper from "../components/WorkStepper";
 import Photography from "../components/Photography";
 
-const PROJECTS = [
+type Project = {
+  name: string;
+  tag: string;
+  lead: string;
+  body: string;
+  cover?: string;
+  demo?: string;
+};
+
+const PROJECTS: Project[] = [
   {
     name: "Aether",
+    cover: "/img/aether-cover.webp",
+    demo: "https://www.aethertech.space/",
     tag: "AI Precision Farming Platform",
     lead: "Turns four ML pipelines into one decision a farmer can act on in seconds.",
     body: "Aether unifies soil-moisture forecasting, crop-disease diagnosis, crop recommendations, and live market prices into a single interface — no data-science background required. I designed the district- and crop-level query flows and built the frontend end-to-end, running live against a real backend with zero mock data.",
   },
   {
     name: "CampusPreps",
+    cover: "/img/campuspreps-cover.webp",
+    demo: "https://campuspreps.vercel.app/",
     tag: "Multi-University Academic Platform",
     lead: "Replaced scattered WhatsApp groups and Drive links with one hub for 20+ universities to reuse.",
     body: "Sole designer and developer on a centralized platform for notes, PYQs, and curated resources. Built on a white-label architecture with 20+ modular components, so any university can deploy it with minimal setup — designed for scale from day one, not just for one campus.",
   },
   {
     name: "Aletheia",
+    cover: "/img/aletheia-cover.webp",
+    demo: "https://aletheia-front.vercel.app/",
     tag: "AI Misinformation Detection",
     lead: "Real-time credibility scoring for news, with a UI that makes AI bias-detection legible to anyone.",
     body: "An AI platform scoring credibility and flagging bias across 5 articles at once, with distinct experiences for general readers versus journalists. I designed the UI/UX layer that translates raw AI outputs — manipulative-technique tags, bias signals — into something a non-technical reader can actually trust and use.",
@@ -156,7 +171,13 @@ export default function Home() {
             {PROJECTS.map((p) => (
               <TiltCard key={p.name}>
                 <div className="proj-cover">
-                  <div className="slot placeholder">{p.name} cover</div>
+                  {p.cover ? (
+                    <div className="slot">
+                      <img src={p.cover} alt={`${p.name} cover`} />
+                    </div>
+                  ) : (
+                    <div className="slot placeholder">{p.name} cover</div>
+                  )}
                 </div>
                 <div className="proj-meta">
                   <div className="proj-top">
@@ -164,7 +185,17 @@ export default function Home() {
                       <div className="proj-name">{p.name}</div>
                       <div className="proj-tag">{p.tag}</div>
                     </div>
-                    <span className="proj-arrow">&rarr;</span>
+                    {p.demo && (
+                      <a
+                        className="proj-arrow"
+                        href={p.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Open ${p.name} live demo`}
+                      >
+                        &rarr;
+                      </a>
+                    )}
                   </div>
                   <div className="proj-desc">
                     <p className="lead">{p.lead}</p>
@@ -223,16 +254,16 @@ export default function Home() {
       <footer className="site-footer">
         <div className="wrap footer-inner">
           <nav className="footer-links">
-            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/shreyashkhare/" target="_blank" rel="noopener noreferrer">
               LinkedIn
             </a>
-            <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/shreyash-droid/" target="_blank" rel="noopener noreferrer">
               GitHub
             </a>
-            <a href="https://www.behance.net/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.behance.net/shreyashkhare" target="_blank" rel="noopener noreferrer">
               Behance
             </a>
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/shreyashshh/" target="_blank" rel="noopener noreferrer">
               Instagram
             </a>
           </nav>
